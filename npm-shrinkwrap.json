@@ -61,7 +61,7 @@
           "version": "5.3.2",
           "from": "git+https://github.com/schme16/buildmail.git",
           "resolved": "git+https://github.com/schme16/buildmail.git#e8d3b751fc09859b21f1f18b92f2291251bba2ee"
-        },
+        }
       }
     },
     "minimist": {
