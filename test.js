@@ -3,9 +3,15 @@
 var email = require('./index.js')({
 		AWSAccessKeyID: process.env.AWSAccessKeyID,
 		AWSSecretKey: process.env.AWSSecretKey
-	}),
-	ics = require('ics-creator'),
-	ical = ics.createICS({
+	})
+
+//How to send an email
+email({
+	from: "schme16@gmail.com", // sender address
+	to: "shane.gadsby@usq.edu.au", // list of receivers, can be semicolon seperated
+	subject: "Lets eat at Maccas tonight", // Subject line
+	html: "Hey Shane, lets go eat at MacDonalds tonight!", // HTML message to send
+	ics: {
 		'organizerName':'Shazza',
 		'organizerEmail':'schme16@gmail.com',
 		'attendeeName':'Shane Gadsby',
@@ -16,17 +22,5 @@ var email = require('./index.js')({
 		'start': new Date(),
 		'end': new Date(),
 		'currentTime': new Date()
-	})
-
-//How to send an email
-email({
-	from: "schme16@gmail.com", // sender address
-	to: "shane.gadsby@usq.edu.au", // list of receivers, can be semicolon seperated
-	subject: "Lets eat at Maccas tonight", // Subject line
-	html: "Hey Shane, lets go eat at MacDonalds tonight!", // HTML message to send
-	icalEvent: {
-		method: 'request',
-		content: ical
 	}
-
 })

@@ -1,6 +1,6 @@
 {
   "name": "ses-email-sender",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Lets you send emails using Amazons SES services",
   "main": "index.js",
   "scripts": {
@@ -23,7 +23,7 @@
   },
   "homepage": "https://github.com/schme16/ses-email-sender#readme",
   "dependencies": {
-    "buildmail": "git+https://github.com/schme16/buildmail.git",
+    "ics-creator": "latest",
     "nodemailer": "^2.2.0-beta.1",
     "nodemailer-html-to-text": "^1.0.2",
     "nodemailer-ses-transport": "^1.3.0"
