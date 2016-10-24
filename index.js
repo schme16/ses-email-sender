@@ -1,14 +1,18 @@
 var nodemailer = require('nodemailer'),
 	htmlToText = require('nodemailer-html-to-text').htmlToText,
 	sesTransport = require('nodemailer-ses-transport'),
+	ics = require('ics-creator'),
 	transporter,
 	noop = function () {},
 	queueHandler = function queueHandler () {
 		var t = queue.shift();
-		if (t) transporter.sendMail(t.data, function (err, res) {
-            if (err) console.error(err, t);
-			t.callback(err);
-        });
+		if (t) {
+			if (!t.data.icalEvent && !!t.data.ics) t.data.icalEvent = ics.createNodemailerEvent(t.data.ics)
+			transporter.sendMail(t.data, function (err, res) {
+	            if (err) console.error(err, t);
+				t.callback(err);
+	        });
+		}
 	},
 	queue = [];
 

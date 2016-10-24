@@ -1,6 +1,6 @@
 {
   "name": "ses-email-sender",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Lets you send emails using Amazons SES services",
   "main": "index.js",
   "scripts": {
